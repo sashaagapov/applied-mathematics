@@ -190,8 +190,8 @@ def build_task3_implicit_curve() -> plt.Figure:
 
 
 def build_task3_parametric_curve() -> plt.Figure:
-    parameter_left = np.linspace(-5, -1.2, 500)
-    parameter_right = np.linspace(-0.8, 5, 500)
+    parameter_left = np.linspace(-5, 5, 500)
+    parameter_right = np.linspace(-5, 5, 500)
 
     x_left = 3 * parameter_left / (1 + parameter_left**3)
     y_left = 2 * parameter_left**2 / (1 + parameter_left**3)
@@ -272,7 +272,7 @@ def find_root(left, right):
 def find_intersection_points():
     points = []
 
-    for start, finish in [(0.01, 0.99), (1.01, 5)]:
+    for start, finish in [(0.01, 0.99), (1.01, 10)]:
         x_values = np.linspace(start, finish, 1000)
 
         for left, right in zip(x_values[:-1], x_values[1:]):
@@ -365,9 +365,6 @@ def task1() -> None:
     print(f"Кількість точок: {POINT_COUNT}")
     print(f"Результати збережено в: {RESULTS_DIR}")
 
-    plt.show()
-
-
 def task2() -> None:
     RESULTS_DIR.mkdir(exist_ok=True)
 
@@ -381,9 +378,6 @@ def task2() -> None:
 
     print("Лабораторна №2 — Завдання 2")
     print(f"Результати збережено в: {RESULTS_DIR}")
-
-    plt.show()
-
 
 def task3() -> None:
     RESULTS_DIR.mkdir(exist_ok=True)
@@ -406,14 +400,12 @@ def task3() -> None:
         print(f"Точка перетину: ({x_value:.6f}, {y_value:.6f})")
     print(f"Результати збережено в: {RESULTS_DIR}")
 
-    plt.show()
-
-
 def main() -> None:
     task1()
     task2()
     task3()
+    plt.show()
 
 
 if __name__ == "__main__":
-    main()
+     main()
