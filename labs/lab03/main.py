@@ -274,10 +274,59 @@ def task3() -> None:
     print(f"Результат збережено в: {output_path}")
 
 
+def build_task4_surface() -> plt.Figure:
+    """Будує кольорову поверхню z = 3x + y - xy на заданій області."""
+    x = np.linspace(0, 1, 100)
+    y = np.linspace(0, 4, 100)
+    # meshgrid формує всі пари координат у точному проміжку з умови.
+    x_grid, y_grid = np.meshgrid(x, y)
+    # Для кожної пари (x, y) обчислюємо задане значення висоти z.
+    z_grid = 3 * x_grid + y_grid - x_grid * y_grid
+
+    fig = plt.figure(figsize=(10, 8))
+    ax = fig.add_subplot(projection="3d")
+    # Градієнт viridis показує, як змінюється висота поверхні.
+    surface = ax.plot_surface(
+        x_grid,
+        y_grid,
+        z_grid,
+        cmap="viridis",
+        edgecolor="none",
+        antialiased=True,
+    )
+    fig.colorbar(surface, ax=ax, shrink=0.68, pad=0.1, label="Значення z")
+
+    ax.set_title(r"Лабораторна робота №3 — Завдання 4: $z = 3x + y - xy$", pad=18)
+    ax.set_xlabel("X")
+    ax.set_ylabel("Y")
+    ax.set_zlabel("Z")
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 4)
+    ax.set_zlim(0, 4)
+    ax.set_box_aspect((2, 6, 4))
+    ax.view_init(elev=28, azim=-55)
+    fig.tight_layout()
+
+    return fig
+
+
+def task4() -> None:
+    """Зберігає результат побудови Завдання 4 у PNG-файл."""
+    RESULTS_DIR.mkdir(exist_ok=True)
+    figure = build_task4_surface()
+    output_path = RESULTS_DIR / "task4_colored_surface.png"
+    figure.savefig(output_path, dpi=150, bbox_inches="tight")
+
+    print("Лабораторна робота №3 — Завдання 4")
+    print(f"Варіант: {VARIANT}")
+    print(f"Результат збережено в: {output_path}")
+
+
 def main() -> None:
     task1()
     task2()
     task3()
+    task4()
     plt.show()
 
 
