@@ -322,11 +322,100 @@ def task4() -> None:
     print(f"Результат збережено в: {output_path}")
 
 
+def build_task5_bars() -> plt.Figure:
+    """Будує три набори просторових стовпців для варіанта 1."""
+    bar_count = VARIANT + 4
+    x_positions = np.arange(bar_count) * 1.2
+    bar_width = 0.55
+    bar_depth = 0.16
+
+    first_y_positions = np.full(bar_count, 1.0)
+    second_y_positions = np.full(bar_count, 2.0)
+    third_y_positions = np.linspace(0.05, 1.0, bar_count)
+    # Третій набір зміщено по X, щоб його останній стовпець не накладався на перший.
+    third_x_positions = x_positions + 0.65
+
+    # Висоти додатні та підібрані вручну, щоб три набори було легко порівнювати.
+    first_heights = np.array([2.2, 3.4, 1.8, 4.0, 2.8])
+    second_heights = np.array([1.6, 2.5, 3.6, 2.1, 3.1])
+    third_heights = np.array([1.4, 2.8, 2.0, 3.3, 2.4])
+    z_positions = np.zeros(bar_count)
+
+    fig = plt.figure(figsize=(11, 8))
+    ax = fig.add_subplot(projection="3d")
+    # bar3d(x, y, z, dx, dy, dz) задає кут, ширину, глибину та висоту стовпців.
+    ax.bar3d(
+        x_positions,
+        first_y_positions,
+        z_positions,
+        bar_width,
+        bar_depth,
+        first_heights,
+        color="#4C78A8",
+        alpha=0.82,
+        shade=True,
+    )
+    ax.bar3d(
+        x_positions,
+        second_y_positions,
+        z_positions,
+        bar_width,
+        bar_depth,
+        second_heights,
+        color="#F58518",
+        alpha=0.82,
+        shade=True,
+    )
+    ax.bar3d(
+        third_x_positions,
+        third_y_positions,
+        z_positions,
+        bar_width,
+        bar_depth,
+        third_heights,
+        color="#54A24B",
+        alpha=0.82,
+        shade=True,
+    )
+
+    legend_items = [
+        Patch(color="#4C78A8", label="Набір 1: y = 1"),
+        Patch(color="#F58518", label="Набір 2: y = 2"),
+        Patch(color="#54A24B", label="Набір 3: y від 0.05 до 1"),
+    ]
+    ax.legend(handles=legend_items, loc="upper left")
+    ax.set_title("Лабораторна робота №3 — Завдання 5: просторові стовпці", pad=18)
+    ax.set_xlabel("X")
+    ax.set_ylabel("Y")
+    ax.set_zlabel("Z (висота)")
+    ax.set_xlim(-0.3, 6.1)
+    ax.set_ylim(0, 2.4)
+    ax.set_zlim(0, 4.5)
+    ax.set_box_aspect((7, 3, 4.5))
+    ax.view_init(elev=24, azim=-58)
+    fig.tight_layout()
+
+    return fig
+
+
+def task5() -> None:
+    """Зберігає результат побудови Завдання 5 у PNG-файл."""
+    RESULTS_DIR.mkdir(exist_ok=True)
+    figure = build_task5_bars()
+    output_path = RESULTS_DIR / "task5_3d_bars.png"
+    figure.savefig(output_path, dpi=150, bbox_inches="tight")
+
+    print("Лабораторна робота №3 — Завдання 5")
+    print(f"Варіант: {VARIANT}, кількість стовпців у наборі: {VARIANT + 4}")
+    print(f"Результат збережено в: {output_path}")
+
+
 def main() -> None:
     task1()
     task2()
     task3()
     task4()
+    task5()
     plt.show()
 
 
