@@ -410,12 +410,64 @@ def task5() -> None:
     print(f"Результат збережено в: {output_path}")
 
 
+def build_task6_surface() -> plt.Figure:
+    """Будує кольорову хвилясту поверхню z = sin(x) cos(y)."""
+    x = np.linspace(-np.pi, np.pi, 120)
+    y = np.linspace(-np.pi, np.pi, 120)
+    # meshgrid створює сітку всіх пар (x, y) в області від -π до π.
+    x_grid, y_grid = np.meshgrid(x, y)
+    # Добуток sin(x) і cos(y) утворює чергування гребенів та западин.
+    z_grid = np.sin(x_grid) * np.cos(y_grid)
+
+    fig = plt.figure(figsize=(11, 8))
+    ax = fig.add_subplot(projection="3d")
+    # Яскравий градієнт turbo підкреслює зміну висоти хвиль.
+    surface = ax.plot_surface(
+        x_grid,
+        y_grid,
+        z_grid,
+        cmap="turbo",
+        edgecolor="none",
+        antialiased=True,
+    )
+    # Контури на нижній площині XY допомагають побачити форму хвиль зверху.
+    ax.contourf(x_grid, y_grid, z_grid, zdir="z", offset=-1.2, cmap="turbo", alpha=0.7)
+    fig.colorbar(surface, ax=ax, shrink=0.68, pad=0.1, label="Значення z")
+
+    ax.text2D(0.02, 0.9, "Варіант 1", transform=ax.transAxes, fontsize=12, weight="bold")
+    ax.set_title(r"Лабораторна робота №3 — Завдання 6: $z = \sin(x)\cos(y)$", pad=18)
+    ax.set_xlabel("X")
+    ax.set_ylabel("Y")
+    ax.set_zlabel("Z")
+    ax.set_xlim(-np.pi, np.pi)
+    ax.set_ylim(-np.pi, np.pi)
+    ax.set_zlim(-1.2, 1.2)
+    ax.set_box_aspect((7, 7, 3))
+    ax.view_init(elev=32, azim=-55)
+    fig.tight_layout()
+
+    return fig
+
+
+def task6() -> None:
+    """Зберігає результат побудови Завдання 6 у PNG-файл."""
+    RESULTS_DIR.mkdir(exist_ok=True)
+    figure = build_task6_surface()
+    output_path = RESULTS_DIR / "task6_custom_surface.png"
+    figure.savefig(output_path, dpi=150, bbox_inches="tight")
+
+    print("Лабораторна робота №3 — Завдання 6")
+    print(f"Варіант: {VARIANT}")
+    print(f"Результат збережено в: {output_path}")
+
+
 def main() -> None:
     task1()
     task2()
     task3()
     task4()
     task5()
+    task6()
     plt.show()
 
 
