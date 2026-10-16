@@ -226,9 +226,58 @@ def task2() -> None:
     print(f"Результат збережено в: {output_path}")
 
 
+def build_task3_surface() -> plt.Figure:
+    """Будує сідлоподібну поверхню z = xy."""
+    x = np.linspace(-4, 4, 100)
+    y = np.linspace(-4, 4, 100)
+    # meshgrid створює всі пари координат (x, y) для обчислення поверхні.
+    x_grid, y_grid = np.meshgrid(x, y)
+    # Добуток x і y дає додатні та від’ємні ділянки сідлоподібної поверхні.
+    z_grid = x_grid * y_grid
+
+    fig = plt.figure(figsize=(10, 8))
+    ax = fig.add_subplot(projection="3d")
+    # plot_surface малює неперервну поверхню з точок координатної сітки.
+    surface = ax.plot_surface(
+        x_grid,
+        y_grid,
+        z_grid,
+        cmap="coolwarm",
+        edgecolor="none",
+        antialiased=True,
+    )
+    fig.colorbar(surface, ax=ax, shrink=0.68, pad=0.1, label="Значення z")
+
+    ax.set_title(r"Лабораторна робота №3 — Завдання 3: $z = xy$", pad=18)
+    ax.set_xlabel("X")
+    ax.set_ylabel("Y")
+    ax.set_zlabel("Z")
+    ax.set_xlim(-4, 4)
+    ax.set_ylim(-4, 4)
+    ax.set_zlim(-16, 16)
+    ax.set_box_aspect((8, 8, 6))
+    ax.view_init(elev=28, azim=-45)
+    fig.tight_layout()
+
+    return fig
+
+
+def task3() -> None:
+    """Зберігає результат побудови Завдання 3 у PNG-файл."""
+    RESULTS_DIR.mkdir(exist_ok=True)
+    figure = build_task3_surface()
+    output_path = RESULTS_DIR / "task3_surface.png"
+    figure.savefig(output_path, dpi=150, bbox_inches="tight")
+
+    print("Лабораторна робота №3 — Завдання 3")
+    print(f"Варіант: {VARIANT}")
+    print(f"Результат збережено в: {output_path}")
+
+
 def main() -> None:
     task1()
     task2()
+    task3()
     plt.show()
 
 
