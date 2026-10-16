@@ -461,6 +461,97 @@ def task6() -> None:
     print(f"Результат збережено в: {output_path}")
 
 
+def build_task7_mosaic() -> plt.Figure:
+    """Будує мозаїку з каркаса, 3D-точок і полярних контурів."""
+    x = np.linspace(-3, 3, 50)
+    y = np.linspace(-3, 3, 50)
+    # Одна сітка і значення z = xy використовуються для обох 3D-областей.
+    x_grid, y_grid = np.meshgrid(x, y)
+    z_grid = x_grid * y_grid
+
+    fig = plt.figure(figsize=(14, 12))
+    wireframe_ax = fig.add_axes([0.06, 0.56, 0.4, 0.34], projection="3d")
+    scatter_ax = fig.add_axes([0.54, 0.56, 0.4, 0.34], projection="3d")
+    polar_ax = fig.add_axes([0.28, 0.08, 0.44, 0.36], projection="polar")
+
+    # plot_wireframe показує форму поверхні лише лініями координатної сітки.
+    wireframe_ax.plot_wireframe(
+        x_grid,
+        y_grid,
+        z_grid,
+        rstride=3,
+        cstride=3,
+        color="#1F4E79",
+        linewidth=0.65,
+    )
+    wireframe_ax.set_title(r"Каркас поверхні $z = xy$", pad=10)
+    wireframe_ax.set_xlabel("X")
+    wireframe_ax.set_ylabel("Y")
+    wireframe_ax.set_zlabel("Z")
+    wireframe_ax.set_zlim(-9, 9)
+    wireframe_ax.set_box_aspect((6, 6, 4.5))
+    wireframe_ax.view_init(elev=25, azim=-50)
+
+    # Зріз [::3, ::3] залишає окремі точки, але сідлоподібна форма не губиться.
+    scatter = scatter_ax.scatter(
+        x_grid[::3, ::3],
+        y_grid[::3, ::3],
+        z_grid[::3, ::3],
+        c=z_grid[::3, ::3],
+        cmap="coolwarm",
+        s=13,
+        alpha=0.85,
+        depthshade=True,
+    )
+    scatter_ax.set_title(r"Розсіяні 3D-точки $z = xy$", pad=10)
+    scatter_ax.set_xlabel("X")
+    scatter_ax.set_ylabel("Y")
+    scatter_ax.set_zlabel("Z")
+    scatter_ax.set_zlim(-9, 9)
+    scatter_ax.set_box_aspect((6, 6, 4.5))
+    scatter_ax.view_init(elev=25, azim=-50)
+    fig.colorbar(scatter, ax=scatter_ax, shrink=0.55, pad=0.06, label="Z")
+
+    phi = np.linspace(0, 2 * np.pi, 240)
+    rho = np.linspace(0, 1.65, 160)
+    # Полярна сітка задає точки поля F(ρ, φ), а не готову лінію через plot().
+    phi_grid, rho_grid = np.meshgrid(phi, rho)
+    field = rho_grid * (1 + np.sin(phi_grid) / 3)
+    levels = np.linspace(0, 2, 17)
+    polar_ax.contourf(phi_grid, rho_grid, field, levels=levels, cmap="YlGnBu")
+    polar_ax.contour(phi_grid, rho_grid, field, levels=levels, colors="#355C7D", linewidths=0.45)
+    # Ізолінія F = 1 є заданою кривою ρ = 1 / (1 + sin(φ) / 3).
+    target_curve = polar_ax.contour(
+        phi_grid,
+        rho_grid,
+        field,
+        levels=[1],
+        colors="#C2185B",
+        linewidths=2.6,
+    )
+    polar_ax.clabel(target_curve, fmt={1.0: "F = 1"}, fontsize=10)
+    polar_ax.set_title(r"Полярні контури: $F(\rho, \varphi)$ та рівень $F = 1$", pad=18)
+    polar_ax.set_rmax(1.65)
+    polar_ax.set_rlabel_position(135)
+    polar_ax.grid(alpha=0.45)
+
+    fig.suptitle("Лабораторна робота №3 — Завдання 7: мозаїка графіків", fontsize=16, y=0.98)
+
+    return fig
+
+
+def task7() -> None:
+    """Зберігає результат побудови Завдання 7 у PNG-файл."""
+    RESULTS_DIR.mkdir(exist_ok=True)
+    figure = build_task7_mosaic()
+    output_path = RESULTS_DIR / "task7_mosaic.png"
+    figure.savefig(output_path, dpi=150, bbox_inches="tight")
+
+    print("Лабораторна робота №3 — Завдання 7")
+    print(f"Варіант: {VARIANT}")
+    print(f"Результат збережено в: {output_path}")
+
+
 def main() -> None:
     task1()
     task2()
@@ -468,6 +559,7 @@ def main() -> None:
     task4()
     task5()
     task6()
+    task7()
     plt.show()
 
 
