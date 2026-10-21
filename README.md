@@ -4,6 +4,8 @@ Three Python labs for variant 1: linear algebra in the console, two-dimensional 
 
 ## Results at a glance
 
+The four images below are previews. Open the full galleries: **[all 11 Lab 02 plots](labs/lab02/README.md#gallery)** · **[all 7 Lab 03 plots](labs/lab03/README.md#gallery)**.
+
 | Lab 02 — stacked bar chart | Lab 02 — function intersections |
 | --- | --- |
 | ![Stacked bars for six groups](docs/lab02/stacked_bar_chart.png) | ![Two plotted functions with marked intersections](docs/lab02/task3_functions_combined.png) |
@@ -11,8 +13,6 @@ Three Python labs for variant 1: linear algebra in the console, two-dimensional 
 | Lab 03 — six 3D shapes | Lab 03 — surface z = xy |
 | --- | --- |
 | ![Six geometric shapes in 3D](docs/lab03/task1-shapes.png) | ![Saddle surface z = xy](docs/lab03/task3-surface.png) |
-
-Browse the [Lab 02 gallery](labs/lab02/README.md#gallery) and [Lab 03 gallery](labs/lab03/README.md#gallery) for the remaining plots.
 
 ## Labs
 
