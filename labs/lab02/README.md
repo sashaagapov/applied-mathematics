@@ -1,17 +1,17 @@
-# Лабораторна робота №2
+# Lab 02 — 2D Visualization
 
-Варіант 1: візуалізація за допомогою Matplotlib. [Програма](main.py) будує діаграми, геометричні фігури, неявну, параметричну й полярну криві та графіки функцій із точками перетину.
+[The script](main.py) builds 11 Matplotlib figures across three tasks. The plots are generated locally; no Lab 02 output images are tracked in this repository.
 
-Програма будує три різнокольорові діаграми за допомогою Matplotlib:
+| Task | Plots saved under `labs/lab02/results/` |
+| --- | --- |
+| 1 — Charts | `stacked_bar_chart.png` (six groups, four segments each), `pie_chart.png` (six sectors), `scatter_chart.png` (51 points). |
+| 2 — Shapes | `task2_primitives.png`, `task2_polygon.png`. |
+| 3 — Curves and functions | `task3_implicit_curve.png`, `task3_parametric_curve.png`, `task3_polar_curve.png`, `task3_colored_curve.png`, `task3_functions_subplots.png`, `task3_functions_combined.png`. The last plot marks the intersections also printed in the console. |
 
-- стекову стовпчасту діаграму з 6 групами та 4 сегментами в кожній;
-- кругову діаграму з 6 секторами та виділеними секторами;
-- діаграму розсіювання з 51 випадковою точкою та різними маркерами кожні 10 точок.
-
-Запуск з кореня репозиторію:
+After [installing the dependencies](../../README.md#run), run from the repository root:
 
 ```bash
 python labs/lab02/main.py
 ```
 
-Після запуску зображення зберігаються в каталозі `labs/lab02/results/` і відкриваються у вікнах Matplotlib. Каталог ігнорується Git і створюється локально.
+The script saves the PNG files and opens the figures in Matplotlib windows. The `results/` directory is ignored by Git.
