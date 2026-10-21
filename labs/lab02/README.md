@@ -1,6 +1,6 @@
 # Lab 02 — 2D Visualization
 
-[The script](main.py) builds 11 Matplotlib figures across three tasks. The plots are generated locally; no Lab 02 output images are tracked in this repository.
+[The script](main.py) builds 11 Matplotlib figures across three tasks. Nine outputs from the checked-in version are included below. The parametric and colored-curve previews will be added after their pending local code changes are reviewed.
 
 | Task | Plots saved under `labs/lab02/results/` |
 | --- | --- |
@@ -14,4 +14,24 @@ After [installing the dependencies](../../README.md#run), run from the repositor
 python labs/lab02/main.py
 ```
 
-The script saves the PNG files and opens the figures in Matplotlib windows. The `results/` directory is ignored by Git.
+The script saves the PNG files and opens the figures in Matplotlib windows. The `results/` directory is ignored by Git; selected copies for documentation live in `docs/lab02/`.
+
+## Gallery
+
+### Task 1 — charts
+
+![Stacked bar chart for six groups](../../docs/lab02/stacked_bar_chart.png)
+![Pie chart with six sectors](../../docs/lab02/pie_chart.png)
+![Scatter plot with 51 points](../../docs/lab02/scatter_chart.png)
+
+### Task 2 — geometric shapes
+
+![Geometric primitives and arrow](../../docs/lab02/task2_primitives.png)
+![Polygon construction](../../docs/lab02/task2_polygon.png)
+
+### Task 3 — curves and functions
+
+![Implicit curve](../../docs/lab02/task3_implicit_curve.png)
+![Polar curve](../../docs/lab02/task3_polar_curve.png)
+![Function plots in separate panels](../../docs/lab02/task3_functions_subplots.png)
+![Combined functions with marked intersections](../../docs/lab02/task3_functions_combined.png)
