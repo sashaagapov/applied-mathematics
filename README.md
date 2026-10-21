@@ -2,17 +2,25 @@
 
 Three Python labs for variant 1: linear algebra in the console, two-dimensional plotting, and 3D visualization. NumPy, SymPy, and Matplotlib are used where appropriate.
 
-![Saddle surface z = xy, plotted in Lab 03](docs/lab03/task3-surface.png)
+## Results at a glance
 
-The image is the `z = xy` surface from Lab 03. [See the other Lab 03 examples](labs/lab03/README.md#examples).
+| Lab 02 — stacked bar chart | Lab 02 — function intersections |
+| --- | --- |
+| ![Stacked bars for six groups](docs/lab02/stacked_bar_chart.png) | ![Two plotted functions with marked intersections](docs/lab02/task3_functions_combined.png) |
+
+| Lab 03 — six 3D shapes | Lab 03 — surface z = xy |
+| --- | --- |
+| ![Six geometric shapes in 3D](docs/lab03/task1-shapes.png) | ![Saddle surface z = xy](docs/lab03/task3-surface.png) |
+
+Browse the [Lab 02 gallery](labs/lab02/README.md#gallery) and [Lab 03 gallery](labs/lab03/README.md#gallery) for the remaining plots.
 
 ## Labs
 
 | Lab | Work and result |
 | --- | --- |
 | [01 — Linear and vector algebra](labs/lab01/README.md) | Matrix polynomial and equation, linear system, vector expressions, triangle area, and pyramid volume. Results print to the console; the [report](labs/lab01/Lab1_Report.docx) is included. |
-| [02 — 2D plots](labs/lab02/README.md) | Charts, shapes, curves, and function intersections. Running the script saves 11 PNG plots locally. |
-| [03 — 3D plots](labs/lab03/README.md) | Solids, surfaces, 3D bars, and a plot mosaic. Three example images are included; running the script saves all seven plots locally. |
+| [02 — 2D plots](labs/lab02/README.md) | Charts, shapes, curves, and function intersections. Nine plots are visible in the gallery; running the script saves all 11 locally. |
+| [03 — 3D plots](labs/lab03/README.md) | Solids, surfaces, 3D bars, and a plot mosaic. All seven plots are visible in the gallery. |
 
 ## Run
 
