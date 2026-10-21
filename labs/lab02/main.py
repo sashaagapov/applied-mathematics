@@ -190,8 +190,8 @@ def build_task3_implicit_curve() -> plt.Figure:
 
 
 def build_task3_parametric_curve() -> plt.Figure:
-    parameter_left = np.linspace(-5, 5, 500)
-    parameter_right = np.linspace(-5, 5, 500)
+    parameter_left = np.linspace(-5, -1.05, 500)
+    parameter_right = np.linspace(-0.95, 5, 500)
 
     x_left = 3 * parameter_left / (1 + parameter_left**3)
     y_left = 2 * parameter_left**2 / (1 + parameter_left**3)
@@ -241,7 +241,7 @@ def build_task3_colored_curve() -> plt.Figure:
         x_values = (y_values**2 - 10) / 2
         ax.plot(x_values, y_values, color=color, linewidth=2.5)
 
-    ax.text(7, -4.5, r"$y^2 - 2x - 10 = 0$", rotation=204, fontsize=13)
+    ax.text(7, -4.5, r"$y^2 - 2x - 10 = 0$", rotation=-12, fontsize=13)
     ax.set_title("Лабораторна №2 — Завдання 3.3", fontsize=15, pad=12)
     ax.set_xlabel("X")
     ax.set_ylabel("Y")

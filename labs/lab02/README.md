@@ -1,6 +1,6 @@
 # Lab 02 — 2D Visualization
 
-[The script](main.py) builds 11 Matplotlib figures across three tasks. Nine outputs from the checked-in version are included below. The parametric and colored-curve previews will be added after their pending local code changes are reviewed.
+[The script](main.py) builds 11 Matplotlib figures across three tasks. All 11 outputs are included below. The [lab report](Lab2_Report.docx) is also available.
 
 | Task | Plots saved under `labs/lab02/results/` |
 | --- | --- |
@@ -32,6 +32,8 @@ The script saves the PNG files and opens the figures in Matplotlib windows. The 
 ### Task 3 — curves and functions
 
 ![Implicit curve](../../docs/lab02/task3_implicit_curve.png)
+![Parametric curve](../../docs/lab02/task3_parametric_curve.png)
 ![Polar curve](../../docs/lab02/task3_polar_curve.png)
+![Colored curve with equation label](../../docs/lab02/task3_colored_curve.png)
 ![Function plots in separate panels](../../docs/lab02/task3_functions_subplots.png)
 ![Combined functions with marked intersections](../../docs/lab02/task3_functions_combined.png)

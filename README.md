@@ -19,7 +19,7 @@ Browse the [Lab 02 gallery](labs/lab02/README.md#gallery) and [Lab 03 gallery](l
 | Lab | Work and result |
 | --- | --- |
 | [01 — Linear and vector algebra](labs/lab01/README.md) | Matrix polynomial and equation, linear system, vector expressions, triangle area, and pyramid volume. Results print to the console; the [report](labs/lab01/Lab1_Report.docx) is included. |
-| [02 — 2D plots](labs/lab02/README.md) | Charts, shapes, curves, and function intersections. Nine plots are visible in the gallery; running the script saves all 11 locally. |
+| [02 — 2D plots](labs/lab02/README.md) | Charts, shapes, curves, and function intersections. All 11 plots are visible in the gallery; the [lab report](labs/lab02/Lab2_Report.docx) is included. |
 | [03 — 3D plots](labs/lab03/README.md) | Solids, surfaces, 3D bars, and a plot mosaic. All seven plots are visible in the gallery. |
 
 ## Run
