@@ -1,46 +1,28 @@
 # Applied Mathematics
 
-Лабораторні роботи з прикладної математики: обчислення з NumPy та SymPy і візуалізація за допомогою Matplotlib. Приклади реалізовано для варіанта 1.
+Three Python labs for variant 1: linear algebra in the console, two-dimensional plotting, and 3D visualization. NumPy, SymPy, and Matplotlib are used where appropriate.
 
-## Роботи
+![Saddle surface z = xy, plotted in Lab 03](docs/lab03/task3-surface.png)
 
-| Робота | Зміст | Результат |
-| --- | --- | --- |
-| [Lab 01](labs/lab01/README.md) | Матричні рівняння, системи лінійних рівнянь і векторна алгебра | Консольні обчислення; [звіт](labs/lab01/Lab1_Report.docx) |
-| [Lab 02](labs/lab02/README.md) | Діаграми, геометричні фігури та криві | Графіки в `labs/lab02/results/` |
-| [Lab 03](labs/lab03/README.md) | 3D-об'єкти, поверхні, стовпці та мозаїка | Сім графіків у `labs/lab03/results/` |
+The image is the `z = xy` surface from Lab 03. [See the other Lab 03 examples](labs/lab03/README.md#examples).
 
-Приклад lab 03: поверхня `z = xy`.
+## Labs
 
-![Сідлоподібна поверхня z = xy з lab 03](docs/lab03/task3-surface.png)
+| Lab | Work and result |
+| --- | --- |
+| [01 — Linear and vector algebra](labs/lab01/README.md) | Matrix polynomial and equation, linear system, vector expressions, triangle area, and pyramid volume. Results print to the console; the [report](labs/lab01/Lab1_Report.docx) is included. |
+| [02 — 2D plots](labs/lab02/README.md) | Charts, shapes, curves, and function intersections. Running the script saves 11 PNG plots locally. |
+| [03 — 3D plots](labs/lab03/README.md) | Solids, surfaces, 3D bars, and a plot mosaic. Three example images are included; running the script saves all seven plots locally. |
 
-## Встановлення
+## Run
 
-Потрібен Python 3. Команди виконуються з кореня репозиторію.
-
-macOS/Linux:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-Windows PowerShell:
-
-```powershell
-py -m venv .venv
-.venv\Scripts\Activate.ps1
-```
-
-Install dependencies:
+Use Python 3 from the repository root. Create a virtual environment if desired, then install the [dependencies](requirements.txt):
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-## Запуск
-
-From the repository root:
+Run one lab at a time:
 
 ```bash
 python labs/lab01/main.py
@@ -48,4 +30,4 @@ python labs/lab02/main.py
 python labs/lab03/main.py
 ```
 
-Lab 01 виводить обчислення в консоль; lab 02 і lab 03 зберігають PNG та відкривають графіки. Каталоги результатів ігноруються Git, тому повний набір зображень потрібно створити локально запуском скрипту. Приклади та список семи побудов наведено в [описі lab 03](labs/lab03/README.md).
+Lab 01 prints its answers. Labs 02 and 03 save PNG files under their respective `results/` directories and open Matplotlib windows. Those generated directories are ignored by Git; run the scripts to produce the full sets.
