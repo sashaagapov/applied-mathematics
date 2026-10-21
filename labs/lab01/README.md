@@ -1,19 +1,11 @@
-# Laboratory Work №1
+# Лабораторна робота №1
 
-## Topic
+Варіант 1: лінійна та векторна алгебра з NumPy і SymPy. [Програма](main.py) обчислює матричний поліном, розв'язує матричне рівняння, досліджує сумісність системи лінійних рівнянь, виконує операції з векторами та знаходить площу грані й об'єм піраміди. Результати виводяться в консоль. Доступний [звіт](Lab1_Report.docx).
 
-Application of linear and vector algebra using Python libraries.
+Після [встановлення залежностей](../../README.md#встановлення) запустіть із кореня репозиторію:
 
-## Tools
+```bash
+python labs/lab01/main.py
+```
 
-- Python
-- NumPy
-- SymPy
-
-## Tasks
-
-Task conditions will be added later.
-
-## Results
-
-Results will be added after completing the laboratory work.
+Якщо в Windows виникає `UnicodeEncodeError` через символи φ або π, задайте в PowerShell `$env:PYTHONIOENCODING = "utf-8"` перед запуском.

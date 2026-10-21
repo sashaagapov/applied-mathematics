@@ -1,19 +1,22 @@
 # Applied Mathematics
 
-Laboratory work for the Applied Mathematics course. The repository contains Python programs using NumPy, SymPy, and Matplotlib.
+Лабораторні роботи з прикладної математики: обчислення з NumPy та SymPy і візуалізація за допомогою Matplotlib. Приклади реалізовано для варіанта 1.
 
-## Structure
+## Роботи
 
-```text
-labs/
-├── lab01/    # linear and vector algebra
-├── lab02/    # Matplotlib charts and curves
-└── lab03/    # starter environment for the third laboratory work
-```
+| Робота | Зміст | Результат |
+| --- | --- | --- |
+| [Lab 01](labs/lab01/README.md) | Матричні рівняння, системи лінійних рівнянь і векторна алгебра | Консольні обчислення; [звіт](labs/lab01/Lab1_Report.docx) |
+| [Lab 02](labs/lab02/README.md) | Діаграми, геометричні фігури та криві | Графіки в `labs/lab02/results/` |
+| [Lab 03](labs/lab03/README.md) | 3D-об'єкти, поверхні, стовпці та мозаїка | Сім графіків у `labs/lab03/results/` |
 
-Reports produced for the course are kept with their corresponding lab. Lecture and methodological materials are kept outside this public repository in the University materials review area until they are deliberately moved to shared storage.
+Приклад lab 03: поверхня `z = xy`.
 
-## Setup
+![Сідлоподібна поверхня z = xy з lab 03](docs/lab03/task3-surface.png)
+
+## Встановлення
+
+Потрібен Python 3. Команди виконуються з кореня репозиторію.
 
 macOS/Linux:
 
@@ -35,7 +38,7 @@ Install dependencies:
 python -m pip install -r requirements.txt
 ```
 
-## Run a lab
+## Запуск
 
 From the repository root:
 
@@ -45,4 +48,4 @@ python labs/lab02/main.py
 python labs/lab03/main.py
 ```
 
-Lab 2 writes generated plots to `labs/lab02/results/`. That directory is intentionally ignored because the plots can be regenerated.
+Lab 01 виводить обчислення в консоль; lab 02 і lab 03 зберігають PNG та відкривають графіки. Каталоги результатів ігноруються Git, тому повний набір зображень потрібно створити локально запуском скрипту. Приклади та список семи побудов наведено в [описі lab 03](labs/lab03/README.md).
