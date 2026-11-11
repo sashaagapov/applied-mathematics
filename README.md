@@ -1,6 +1,6 @@
 # Applied Mathematics
 
-Four Python labs for variant 1: linear algebra in the console, two-dimensional plotting, 3D visualization, and animation. NumPy, SymPy, and Matplotlib are used where appropriate.
+Five Python labs for variant 1 and a control work: linear algebra in the console, two-dimensional plotting, 3D visualization, animation, and symbolic calculus with plots. NumPy, SymPy, and Matplotlib are used where appropriate.
 
 ## Results at a glance
 
@@ -26,6 +26,7 @@ The images below are previews. Open the full galleries: **[all 11 Lab 02 plots](
 | [02 — 2D plots](labs/lab02/README.md)                  | Charts, shapes, curves, and function intersections. All 11 plots are visible in the gallery; the [lab report](labs/lab02/Lab2_Report.docx) is included.                                    |
 | [03 — 3D plots](labs/lab03/README.md)                  | Solids, surfaces, 3D bars, and a plot mosaic. All seven plots are visible in the gallery.                                                                                                  |
 | [04 — Animation](labs/lab04/README.md)                 | Three `FuncAnimation` programs: a moving, color-changing 2D curve, a rotating 3D surface, and a polar curve that is drawn and then rotated. The [report](labs/lab04/Lab04_Report.docx) is included.  |
+| [05 — Calculus with SymPy](labs/lab05/README.md)        | Eight tasks: areas between curves, arc lengths, complex roots, a Fourier series, and a series sum, each computed symbolically and plotted. The [report](labs/lab05/Lab05_Report.docx) is included. |
 
 ## Run
 
@@ -42,6 +43,9 @@ python labs/lab01/main.py
 python labs/lab02/main.py
 python labs/lab03/main.py
 python labs/lab04/main.py task1
+python labs/lab05/task1.py
 ```
 
 Lab 01 prints its answers. Labs 02 and 03 save PNG files under their respective `results/` directories and open Matplotlib windows. Those generated directories are ignored by Git; run the scripts to produce the full sets. Lab 04 opens an animated window for the chosen task (`task1`, `task2`, or `task3`); its previews in `docs/lab04/` were rendered from the same code.
+
+The [control work](mkr01/) contains two tasks, `task1.py` and `task2.py`, with their figures and the [report](mkr01/MKR01_Report.docx).
